@@ -28,6 +28,10 @@ Key work:
 
 Financial forecasting can easily look stronger than it is if evaluation is too narrow. This project highlights uncertainty, seed sensitivity, and the limits of price-only sequence models, which is important for responsible analytical work.
 
+## License and Data
+
+Original notebook code and documentation are licensed under the MIT License. Bundled stock-price data files are not relicensed by this repository; see [Data Provenance](DATA_PROVENANCE.md) before reusing data files.
+
 ## Status
 
 Academic portfolio project. README added to make the repository easier for recruiters and reviewers to understand quickly.
