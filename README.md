@@ -28,6 +28,15 @@ Key work:
 
 Financial forecasting can easily look stronger than it is if evaluation is too narrow. This project highlights uncertainty, seed sensitivity, and the limits of price-only sequence models, which is important for responsible analytical work.
 
+## Environment
+
+The notebook metadata records Python 3.11.9. The reproducible environment is captured in [`requirements.txt`](requirements.txt), covering TensorFlow/Keras, pandas, NumPy, Matplotlib, scikit-learn, openpyxl for Excel inputs, Jupyter, and ipykernel.
+
+```bash
+pip install -r requirements.txt
+jupyter notebook rnn_lstm_stock_forecasting.ipynb
+```
+
 ## License and Data
 
 Original notebook code and documentation are licensed under the MIT License. Bundled stock-price data files are not relicensed by this repository; see [Data Provenance](DATA_PROVENANCE.md) before reusing data files.
