@@ -6,10 +6,10 @@ This repository contains original notebook code and documentation for an academi
 
 | Path | Role in this repository | Reuse note |
 | --- | --- | --- |
-| `Google_Stock_Price_Train.csv` | Historical Google stock-price training data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
-| `Google_Stock_Price_Test.csv` | Historical Google stock-price test data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
-| `OXY_Stock_Price_Train.xlsx` | Historical Occidental Petroleum stock-price training data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
-| `OXY_Stock_Price_Test.xlsx` | Historical Occidental Petroleum stock-price test data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
+| `data/Google_Stock_Price_Train.csv` | Historical Google stock-price training data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
+| `data/Google_Stock_Price_Test.csv` | Historical Google stock-price test data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
+| `data/OXY_Stock_Price_Train.xlsx` | Historical Occidental Petroleum stock-price training data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
+| `data/OXY_Stock_Price_Test.xlsx` | Historical Occidental Petroleum stock-price test data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
 
 ## Licensing Boundary
 
