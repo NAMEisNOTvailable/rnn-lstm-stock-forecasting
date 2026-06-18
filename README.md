@@ -30,7 +30,7 @@ University of Adelaide Deep Learning coursework project comparing RNN and LSTM s
 
 ## Model Results
 
-Metrics below come from the executed notebook output and the committed persistence-baseline run. Lower values are better for all four metrics.
+Metrics below come from the executed notebook output and the committed persistence-baseline run. Each asset uses 20 test rows, and lower values are better for all four metrics.
 
 | Asset | Model | RMSE | sMAPE | MASE | RMSLE |
 | --- | --- | ---: | ---: | ---: | ---: |
