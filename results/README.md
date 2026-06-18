@@ -1,6 +1,6 @@
 # Results
 
-This folder stores lightweight reviewer-facing outputs that can be regenerated quickly.
+This folder stores lightweight comparison outputs that can be regenerated quickly.
 
 | File | Purpose |
 | --- | --- |
@@ -12,5 +12,4 @@ Regenerate the baseline metrics from the repository root:
 python scripts/run_baseline.py
 ```
 
-The baseline is a sanity-check comparator, not a trading model.
-
+The baseline is a simple previous-day-close benchmark, not a trading model.

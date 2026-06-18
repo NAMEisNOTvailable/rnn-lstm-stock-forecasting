@@ -9,7 +9,7 @@ pip install -r requirements.txt
 jupyter notebook notebooks/rnn_lstm_stock_forecasting.ipynb
 ```
 
-For fast reviewer checks that do not rerun TensorFlow training, use the package tests and baseline command from the repository root:
+For fast checks that do not rerun TensorFlow training, use the package tests and baseline command from the repository root:
 
 ```bash
 pip install -e ".[dev]"

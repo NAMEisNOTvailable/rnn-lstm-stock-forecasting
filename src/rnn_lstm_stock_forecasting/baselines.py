@@ -27,7 +27,7 @@ def evaluate_persistence_baseline(
     test_df: pd.DataFrame,
     close_column: str = "Close",
 ) -> Dict[str, float | str | int]:
-    """Evaluate a one-step persistence baseline for reviewer comparison."""
+    """Evaluate a one-step persistence baseline for model comparison."""
 
     if close_column not in train_df.columns or close_column not in test_df.columns:
         raise ValueError(f"Column {close_column!r} is required in train and test data.")
@@ -43,4 +43,3 @@ def evaluate_persistence_baseline(
         "test_rows": int(test_close.size),
         **metrics,
     }
-
