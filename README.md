@@ -23,7 +23,7 @@ University of Adelaide Deep Learning coursework project comparing RNN and LSTM s
 ## What This Demonstrates
 
 - Built RNN/LSTM forecasting pipelines for multivariate stock-price time series.
-- Converted notebook logic into reusable, unit-tested helpers for cleaning, scaling, rolling-window sequence generation, and forecast metrics.
+- Added tested helper modules for data cleaning, scaling, rolling-window sequence generation, and forecast metrics.
 - Added a one-step persistence baseline so RNN/LSTM forecasts can be compared against a simple previous-day-close benchmark.
 - Reported RMSE, sMAPE, MASE, and RMSLE to show absolute, relative, scaled, and log-scale error.
 - Documented the limits of historical price-only forecasting and the coursework context for the experiment.
