@@ -41,7 +41,7 @@ Metrics below come from the executed notebook output and the committed persisten
 | OXY | LSTM | 0.75 | 0.95 | 0.74 | 0.0107 |
 | OXY | Persistence baseline | 0.60 | 0.72 | 0.56 | 0.0085 |
 
-In this run, the previous-day-close baseline has the lowest error for both assets. That comparison keeps the RNN/LSTM coursework results grounded in a simple benchmark.
+This result shows how difficult short-window stock forecasting can be: a simple previous-close baseline outperformed the RNN/LSTM models in this run.
 
 Full metrics are stored in [`results/comparison_metrics.csv`](results/comparison_metrics.csv). Forecast plots are saved under [`results/forecast_plots`](results/forecast_plots).
 
