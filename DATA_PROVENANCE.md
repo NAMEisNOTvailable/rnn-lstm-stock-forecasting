@@ -10,10 +10,12 @@ This repository contains original notebook code and documentation for an academi
 | `data/Google_Stock_Price_Test.csv` | Historical Google stock-price test data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
 | `data/OXY_Stock_Price_Train.xlsx` | Historical Occidental Petroleum stock-price training data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
 | `data/OXY_Stock_Price_Test.xlsx` | Historical Occidental Petroleum stock-price test data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
+| `results/baseline_metrics.csv` | Derived persistence-baseline metrics generated from the bundled train/test files. | Reviewer-facing analysis output; source data reuse still depends on the original data provider terms. |
 
 ## Licensing Boundary
 
 - Original notebook code and documentation: MIT license, see `LICENSE`.
+- Reusable source code, tests, scripts, and derived metric-generation code: MIT license, see `LICENSE`.
 - Bundled stock-price data files: not relicensed by this repository.
 - Reuse of the data should follow the original data provider's terms and any applicable market-data restrictions.
 

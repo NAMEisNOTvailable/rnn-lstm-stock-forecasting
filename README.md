@@ -1,54 +1,112 @@
 # RNN and LSTM - Financial Time-Series Forecasting
 
-Deep learning coursework project for financial time-series forecasting using recurrent neural networks.
+[![Smoke tests](https://github.com/NAMEisNOTvailable/rnn-lstm-stock-forecasting/actions/workflows/smoke.yml/badge.svg)](https://github.com/NAMEisNOTvailable/rnn-lstm-stock-forecasting/actions/workflows/smoke.yml)
+![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-RNN%20%7C%20LSTM-ff6f00)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## Portfolio Summary
+Financial time-series forecasting portfolio project comparing RNN and LSTM sequence models on Google and Occidental Petroleum stock-price data. The project is framed as a sequence-modelling experiment, not as a trading recommendation system.
 
-This project builds RNN/LSTM forecasting pipelines for stock-price time series and evaluates prediction quality with multiple error metrics. It is framed as an experiment in sequence modelling rather than a trading recommendation system.
+## Quick Review Path
 
-Key work:
+- **2 minutes:** read this README for scope, evidence, and limitations.
+- **5 minutes:** inspect [`src/rnn_lstm_stock_forecasting`](src/rnn_lstm_stock_forecasting), [`tests`](tests), and the smoke workflow to see the reusable data, sequence, metric, and baseline checks.
+- **10 minutes:** open [`notebooks/rnn_lstm_stock_forecasting.ipynb`](notebooks/rnn_lstm_stock_forecasting.ipynb) for the original RNN/LSTM experiment and plots.
 
-- Built recurrent forecasting pipelines for **Google** and **Occidental Petroleum** stock-price data.
-- Used **60-timestep sequences** for supervised time-series modelling.
-- Applied MinMax scaling and MSE/Adam-based model training.
-- Compared RNN and LSTM behaviour across repeated runs.
-- Evaluated forecasts with **RMSE**, **sMAPE**, **MASE**, and **RMSLE**.
-- Documented seed sensitivity and the limitations of stock-price prediction with historical price-only models.
+## Project Snapshot
 
-## Skills Demonstrated
+| Area | Summary |
+| --- | --- |
+| Task | One-step stock-price forecasting from historical price features |
+| Assets | Google and Occidental Petroleum |
+| Sequence length | 60 timesteps |
+| Features | Open, High, Low, Close, Volume |
+| Models in notebook | SimpleRNN and LSTM with dropout, MSE loss, Adam optimizer |
+| Evaluation metrics | RMSE, sMAPE, MASE, RMSLE |
+| Reviewer checks | Unit-tested preprocessing, sequence construction, metrics, and persistence baseline |
+| Main artefacts | [`notebooks`](notebooks), [`src/rnn_lstm_stock_forecasting`](src/rnn_lstm_stock_forecasting), [`results`](results), [`docs/portfolio_summary.md`](docs/portfolio_summary.md) |
 
-- Time-series preprocessing
-- RNN and LSTM sequence modelling
-- Financial data analysis
-- Forecast evaluation metrics
-- Experiment tracking and reproducibility awareness
-- Critical interpretation of model limitations
+## What This Demonstrates
 
-## Why This Matters
+- Built RNN/LSTM forecasting pipelines for multivariate stock-price time series.
+- Converted notebook logic into reusable, unit-tested helpers for cleaning, scaling, rolling-window sequence generation, and forecast metrics.
+- Added a one-step persistence baseline so neural forecasts can be discussed against a simple reviewer-friendly comparator.
+- Used multiple error metrics instead of relying on a single headline score.
+- Documented why historical price-only forecasting is fragile and should not be interpreted as investment advice.
 
-Financial forecasting can easily look stronger than it is if evaluation is too narrow. This project highlights uncertainty, seed sensitivity, and the limits of price-only sequence models, which is important for responsible analytical work.
+## Baseline Reference
+
+The repository includes a lightweight persistence baseline that forecasts each test close with the most recent observed close. It is not intended to beat the neural models; it gives reviewers a sanity-check comparator.
+
+Run:
+
+```bash
+python scripts/run_baseline.py
+```
+
+The committed baseline output is stored in [`results/baseline_metrics.csv`](results/baseline_metrics.csv). Regenerate it after dependency installation if the source data changes.
 
 ## Repository Structure
 
 ```text
-notebooks/   Main RNN/LSTM forecasting notebook
-data/        Local stock-price CSV/XLSX files used by the notebook
-README.md    Portfolio overview and reviewer guide
+data/                         Stock-price CSV/XLSX files used by the notebook
+docs/                         Portfolio summary and modelling caveats
+notebooks/                    Original RNN/LSTM forecasting notebook
+results/                      Lightweight baseline metrics for reviewer comparison
+scripts/                      Command-line baseline runner
+src/rnn_lstm_stock_forecasting/
+                              Reusable preprocessing, sequence, metric, and baseline helpers
+tests/                        Pytest coverage for the reusable project logic
 ```
 
 ## Environment
 
-The notebook metadata records Python 3.11.9. The reproducible environment is captured in [`requirements.txt`](requirements.txt), covering TensorFlow/Keras, pandas, NumPy, Matplotlib, scikit-learn, openpyxl for Excel inputs, Jupyter, and ipykernel.
+The notebook metadata records Python 3.11.9. For reviewer checks without TensorFlow training, install the package and test dependency:
 
 ```bash
-pip install -r requirements.txt
+python -m venv .venv
+.\.venv\Scripts\python -m pip install --upgrade pip
+.\.venv\Scripts\python -m pip install -e ".[dev]"
+```
+
+Run tests and the baseline check:
+
+```bash
+pytest
+python scripts/run_baseline.py
+```
+
+For the full notebook environment, including TensorFlow and Jupyter:
+
+```bash
+.\.venv\Scripts\python -m pip install -r requirements.txt
 jupyter notebook notebooks/rnn_lstm_stock_forecasting.ipynb
 ```
 
+On Linux/macOS, replace `.\.venv\Scripts\python` with `. .venv/bin/activate` or call `.venv/bin/python`.
+
+## Reviewer Notes
+
+| What to inspect | Where |
+| --- | --- |
+| Notebook experiment and plots | [`notebooks/rnn_lstm_stock_forecasting.ipynb`](notebooks/rnn_lstm_stock_forecasting.ipynb) |
+| Sequence construction and test-window handling | [`src/rnn_lstm_stock_forecasting/sequences.py`](src/rnn_lstm_stock_forecasting/sequences.py) |
+| Forecast metrics | [`src/rnn_lstm_stock_forecasting/metrics.py`](src/rnn_lstm_stock_forecasting/metrics.py) |
+| Baseline comparator | [`src/rnn_lstm_stock_forecasting/baselines.py`](src/rnn_lstm_stock_forecasting/baselines.py), [`results/baseline_metrics.csv`](results/baseline_metrics.csv) |
+| CI and smoke checks | [`.github/workflows/smoke.yml`](.github/workflows/smoke.yml) |
+| Portfolio positioning and caveats | [`docs/portfolio_summary.md`](docs/portfolio_summary.md) |
+
+## Limitations
+
+- The notebook uses historical price/volume features only; it does not include fundamentals, news, macro variables, market regime features, or transaction costs.
+- The neural models are useful for sequence-modelling practice, but stock forecasting is highly sensitive to splits, seeds, market periods, and leakage controls.
+- The bundled stock data is third-party market data and is not relicensed by this repository.
+- This project is academic portfolio work, not financial advice or a deployable trading system.
+
 ## License and Data
 
-Original notebook code and documentation are licensed under the MIT License. Bundled stock-price data files are not relicensed by this repository; see [Data Provenance](DATA_PROVENANCE.md) before reusing data files.
+Original source code, notebook code, tests, and documentation are licensed under the MIT License. Bundled stock-price data files are not relicensed by this repository; see [Data Provenance](DATA_PROVENANCE.md) before reusing them.
 
 ## Status
 
-Academic portfolio project. README added to make the repository easier for recruiters and reviewers to understand quickly.
+Academic portfolio project. The repository is organised so reviewers can inspect the original RNN/LSTM notebook, run a fast baseline check, and verify the reusable preprocessing and metric logic through CI.
