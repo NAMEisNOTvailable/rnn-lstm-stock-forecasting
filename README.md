@@ -24,8 +24,8 @@ Financial time-series forecasting portfolio project comparing RNN and LSTM seque
 
 - Built RNN/LSTM forecasting pipelines for multivariate stock-price time series.
 - Converted notebook logic into reusable, unit-tested helpers for cleaning, scaling, rolling-window sequence generation, and forecast metrics.
-- Added a one-step persistence baseline so neural forecasts can be discussed against a simple reviewer-friendly comparator.
-- Used multiple error metrics instead of relying on a single headline score.
+- Added a one-step persistence baseline so RNN/LSTM forecasts can be compared against a simple previous-day-close benchmark.
+- Reported RMSE, sMAPE, MASE, and RMSLE to show absolute, relative, scaled, and log-scale error.
 - Documented why historical price-only forecasting is fragile and should not be interpreted as investment advice.
 
 ## Baseline Reference
