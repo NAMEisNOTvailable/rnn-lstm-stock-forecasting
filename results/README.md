@@ -12,4 +12,4 @@ Regenerate the baseline metrics from the repository root:
 python scripts/run_baseline.py
 ```
 
-The baseline is a simple previous-day-close benchmark, not a trading model.
+The baseline is a simple previous-day-close benchmark for comparison.

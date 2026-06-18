@@ -5,7 +5,7 @@
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-RNN%20%7C%20LSTM-ff6f00)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-Financial time-series forecasting portfolio project comparing RNN and LSTM sequence models on Google and Occidental Petroleum stock-price data. The project is framed as a sequence-modelling experiment, not as a trading recommendation system.
+University of Adelaide Deep Learning coursework project comparing RNN and LSTM sequence models on Google and Occidental Petroleum stock-price data.
 
 ## Project Snapshot
 
@@ -26,7 +26,7 @@ Financial time-series forecasting portfolio project comparing RNN and LSTM seque
 - Converted notebook logic into reusable, unit-tested helpers for cleaning, scaling, rolling-window sequence generation, and forecast metrics.
 - Added a one-step persistence baseline so RNN/LSTM forecasts can be compared against a simple previous-day-close benchmark.
 - Reported RMSE, sMAPE, MASE, and RMSLE to show absolute, relative, scaled, and log-scale error.
-- Documented why historical price-only forecasting is fragile and should not be interpreted as investment advice.
+- Documented the limits of historical price-only forecasting and the coursework context for the experiment.
 
 ## Baseline Reference
 
@@ -55,7 +55,7 @@ tests/                        Pytest coverage for the reusable project logic
 
 ## Environment
 
-The notebook metadata records Python 3.11.9. For fast checks without TensorFlow training, install the package and test dependency:
+The notebook metadata records Python 3.11.9. For fast checks that skip TensorFlow training, install the package and test dependency:
 
 ```bash
 python -m venv .venv
@@ -92,14 +92,14 @@ On Linux/macOS, replace `.\.venv\Scripts\python` with `. .venv/bin/activate` or 
 
 ## Limitations
 
-- The notebook uses historical price/volume features only; it does not include fundamentals, news, macro variables, market regime features, or transaction costs.
+- The notebook uses historical price/volume features only; a broader forecasting study would add fundamentals, news, macro variables, market regime features, and transaction-cost assumptions.
 - The neural models are useful for sequence-modelling practice, but stock forecasting is highly sensitive to splits, seeds, market periods, and leakage controls.
-- The bundled stock data is third-party market data and is not relicensed by this repository.
-- This project is academic portfolio work, not financial advice or a deployable trading system.
+- The bundled stock data is third-party market data and remains under the original data-provider terms.
+- This project was completed as a University of Adelaide Deep Learning coursework project.
 
 ## License and Data
 
-Original source code, notebook code, tests, and documentation are licensed under the MIT License. Bundled stock-price data files are not relicensed by this repository; see [Data Provenance](DATA_PROVENANCE.md) before reusing them.
+Original source code, notebook code, tests, and documentation are licensed under the MIT License. Bundled stock-price data files remain under the original data-provider terms; see [Data Provenance](DATA_PROVENANCE.md) before reusing them.
 
 ## Status
 

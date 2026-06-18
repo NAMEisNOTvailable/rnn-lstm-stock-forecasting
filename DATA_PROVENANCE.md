@@ -1,6 +1,6 @@
 # Data Provenance
 
-This repository contains original notebook code and documentation for an academic financial time-series forecasting exercise. The MIT license in `LICENSE` applies to the original notebook code and documentation. It does not relicense the bundled stock-price data files.
+This repository contains original notebook code and documentation for an academic financial time-series forecasting exercise. The MIT license in `LICENSE` applies to the original notebook code and documentation. Bundled stock-price data files remain under the original data-provider terms.
 
 ## Data Inventory
 
@@ -10,15 +10,15 @@ This repository contains original notebook code and documentation for an academi
 | `data/Google_Stock_Price_Test.csv` | Historical Google stock-price test data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
 | `data/OXY_Stock_Price_Train.xlsx` | Historical Occidental Petroleum stock-price training data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
 | `data/OXY_Stock_Price_Test.xlsx` | Historical Occidental Petroleum stock-price test data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
-| `results/baseline_metrics.csv` | Derived persistence-baseline metrics generated from the bundled train/test files. | Reviewer-facing analysis output; source data reuse still depends on the original data provider terms. |
+| `results/baseline_metrics.csv` | Derived persistence-baseline metrics generated from the bundled train/test files. | Analysis output; source data reuse still depends on the original data provider terms. |
 
 ## Licensing Boundary
 
 - Original notebook code and documentation: MIT license, see `LICENSE`.
 - Reusable source code, tests, scripts, and derived metric-generation code: MIT license, see `LICENSE`.
-- Bundled stock-price data files: not relicensed by this repository.
+- Bundled stock-price data files: original data-provider terms apply.
 - Reuse of the data should follow the original data provider's terms and any applicable market-data restrictions.
 
 ## Responsible-Use Note
 
-This project is a sequence-modelling exercise, not financial advice or a trading system. Forecast outputs should be interpreted as academic model behaviour, not as investment recommendations.
+This project is a University of Adelaide Deep Learning coursework exercise. Forecast outputs should be interpreted as academic sequence-modelling results.

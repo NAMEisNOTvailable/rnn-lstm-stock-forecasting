@@ -41,7 +41,7 @@ def clean_price_frame(df: pd.DataFrame, columns: Iterable[str] = PRICE_COLUMNS) 
 
 
 def split_train_validation(data: np.ndarray, train_fraction: float = 0.8) -> tuple[np.ndarray, np.ndarray]:
-    """Split a time-ordered array without shuffling."""
+    """Split a time-ordered array while preserving row order."""
 
     values = np.asarray(data)
     if values.ndim != 2:
@@ -75,4 +75,3 @@ def scale_train_test(
         scalers[column] = scaler
 
     return train_scaled, test_scaled, scalers
-
