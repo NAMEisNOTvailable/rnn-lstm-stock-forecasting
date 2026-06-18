@@ -43,7 +43,7 @@ Metrics below come from the executed notebook output and the committed persisten
 
 In this run, the previous-day-close baseline has the lowest error for both assets. That comparison keeps the RNN/LSTM coursework results grounded in a simple benchmark.
 
-Full metrics are stored in [`results/comparison_metrics.csv`](results/comparison_metrics.csv). Forecast plots are exported under [`results/forecast_plots`](results/forecast_plots).
+Full metrics are stored in [`results/comparison_metrics.csv`](results/comparison_metrics.csv). Forecast plots are saved under [`results/forecast_plots`](results/forecast_plots).
 
 ## Baseline Reference
 

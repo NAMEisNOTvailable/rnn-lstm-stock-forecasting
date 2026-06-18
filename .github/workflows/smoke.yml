@@ -35,8 +35,8 @@ jobs:
       - name: Run baseline metrics check
         run: python scripts/run_baseline.py --output results/ci_baseline_metrics.csv
 
-      - name: Export notebook plots
-        run: python scripts/export_notebook_plots.py
+      - name: Check result artifacts
+        run: python scripts/check_result_artifacts.py
 
       - name: Compile project files
         run: python -m compileall src scripts tests

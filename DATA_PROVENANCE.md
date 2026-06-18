@@ -13,7 +13,7 @@ This repository contains original notebook code and documentation for an academi
 | `results/baseline_metrics.csv` | Derived persistence-baseline metrics generated from the bundled train/test files. | Analysis output; source data reuse still depends on the original data provider terms. |
 | `results/model_metrics.csv` | RNN and LSTM metric values copied from the executed notebook output. | Analysis output derived from the coursework experiment. |
 | `results/comparison_metrics.csv` | Combined RNN, LSTM, and persistence-baseline metrics. | Analysis output derived from the coursework experiment and baseline script. |
-| `results/forecast_plots/` | PNG plots exported from the executed notebook output. | Analysis output derived from the coursework experiment. |
+| `results/forecast_plots/` | PNG plots saved by the notebook plotting cells. | Analysis output derived from the coursework experiment. |
 
 ## Licensing Boundary
 

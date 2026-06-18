@@ -1,6 +1,6 @@
 # Forecast Plots
 
-Plots exported from the executed notebook output.
+Plots saved by the notebook plotting cells.
 
 | File | Plot |
 | --- | --- |
@@ -11,9 +11,4 @@ Plots exported from the executed notebook output.
 | `oxy_rnn_loss.png` | OXY RNN training and validation loss. |
 | `oxy_lstm_loss.png` | OXY LSTM training and validation loss. |
 
-Regenerate from the repository root:
-
-```bash
-python scripts/export_notebook_plots.py
-```
-
+Regenerate by running the notebook cells that create the training-loss and forecast figures.
