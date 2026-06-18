@@ -11,6 +11,9 @@ This repository contains original notebook code and documentation for an academi
 | `data/OXY_Stock_Price_Train.xlsx` | Historical Occidental Petroleum stock-price training data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
 | `data/OXY_Stock_Price_Test.xlsx` | Historical Occidental Petroleum stock-price test data used in the coursework notebook. | Third-party market data; verify the original provider terms before reuse. |
 | `results/baseline_metrics.csv` | Derived persistence-baseline metrics generated from the bundled train/test files. | Analysis output; source data reuse still depends on the original data provider terms. |
+| `results/model_metrics.csv` | RNN and LSTM metric values copied from the executed notebook output. | Analysis output derived from the coursework experiment. |
+| `results/comparison_metrics.csv` | Combined RNN, LSTM, and persistence-baseline metrics. | Analysis output derived from the coursework experiment and baseline script. |
+| `results/forecast_plots/` | PNG plots exported from the executed notebook output. | Analysis output derived from the coursework experiment. |
 
 ## Licensing Boundary
 

@@ -1,4 +1,4 @@
-# RNN and LSTM - Financial Time-Series Forecasting
+# RNN/LSTM Stock Forecasting with Baseline-Aware Evaluation
 
 [![Smoke tests](https://github.com/NAMEisNOTvailable/rnn-lstm-stock-forecasting/actions/workflows/smoke.yml/badge.svg)](https://github.com/NAMEisNOTvailable/rnn-lstm-stock-forecasting/actions/workflows/smoke.yml)
 ![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11-blue)
@@ -18,7 +18,7 @@ University of Adelaide Deep Learning coursework project comparing RNN and LSTM s
 | Models in notebook | SimpleRNN and LSTM with dropout, MSE loss, Adam optimizer |
 | Evaluation metrics | RMSE, sMAPE, MASE, RMSLE |
 | Validation checks | Unit-tested preprocessing, sequence construction, metrics, and persistence baseline |
-| Main artefacts | [`notebooks`](notebooks), [`src/rnn_lstm_stock_forecasting`](src/rnn_lstm_stock_forecasting), [`results`](results), [`docs/portfolio_summary.md`](docs/portfolio_summary.md) |
+| Main artefacts | [`notebooks`](notebooks), [`src/rnn_lstm_stock_forecasting`](src/rnn_lstm_stock_forecasting), [`results/comparison_metrics.csv`](results/comparison_metrics.csv), [`results/forecast_plots`](results/forecast_plots), [`docs/portfolio_summary.md`](docs/portfolio_summary.md) |
 
 ## What This Demonstrates
 
@@ -27,6 +27,23 @@ University of Adelaide Deep Learning coursework project comparing RNN and LSTM s
 - Added a one-step persistence baseline so RNN/LSTM forecasts can be compared against a simple previous-day-close benchmark.
 - Reported RMSE, sMAPE, MASE, and RMSLE to show absolute, relative, scaled, and log-scale error.
 - Documented the limits of historical price-only forecasting and the coursework context for the experiment.
+
+## Model Results
+
+Metrics below come from the executed notebook output and the committed persistence-baseline run. Lower values are better for all four metrics.
+
+| Asset | Model | RMSE | sMAPE | MASE | RMSLE |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Google | RNN | 25.79 | 3.04 | 3.27 | 0.0325 |
+| Google | LSTM | 15.87 | 1.69 | 1.84 | 0.0197 |
+| Google | Persistence baseline | 8.32 | 0.77 | 0.84 | 0.0103 |
+| OXY | RNN | 0.88 | 1.02 | 0.80 | 0.0125 |
+| OXY | LSTM | 0.75 | 0.95 | 0.74 | 0.0107 |
+| OXY | Persistence baseline | 0.60 | 0.72 | 0.56 | 0.0085 |
+
+In this run, the previous-day-close baseline has the lowest error for both assets. That comparison keeps the RNN/LSTM coursework results grounded in a simple benchmark.
+
+Full metrics are stored in [`results/comparison_metrics.csv`](results/comparison_metrics.csv). Forecast plots are exported under [`results/forecast_plots`](results/forecast_plots).
 
 ## Baseline Reference
 
@@ -46,7 +63,7 @@ The committed baseline output is stored in [`results/baseline_metrics.csv`](resu
 data/                         Stock-price CSV/XLSX files used by the notebook
 docs/                         Portfolio summary and modelling caveats
 notebooks/                    Original RNN/LSTM forecasting notebook
-results/                      Lightweight baseline metrics for baseline comparison
+results/                      Comparison metrics and exported notebook plots
 scripts/                      Command-line baseline runner
 src/rnn_lstm_stock_forecasting/
                               Reusable preprocessing, sequence, metric, and baseline helpers
@@ -86,7 +103,8 @@ On Linux/macOS, replace `.\.venv\Scripts\python` with `. .venv/bin/activate` or 
 | Notebook experiment and plots | [`notebooks/rnn_lstm_stock_forecasting.ipynb`](notebooks/rnn_lstm_stock_forecasting.ipynb) |
 | Sequence construction and test-window handling | [`src/rnn_lstm_stock_forecasting/sequences.py`](src/rnn_lstm_stock_forecasting/sequences.py) |
 | Forecast metrics | [`src/rnn_lstm_stock_forecasting/metrics.py`](src/rnn_lstm_stock_forecasting/metrics.py) |
-| Baseline benchmark | [`src/rnn_lstm_stock_forecasting/baselines.py`](src/rnn_lstm_stock_forecasting/baselines.py), [`results/baseline_metrics.csv`](results/baseline_metrics.csv) |
+| Baseline benchmark | [`src/rnn_lstm_stock_forecasting/baselines.py`](src/rnn_lstm_stock_forecasting/baselines.py), [`results/comparison_metrics.csv`](results/comparison_metrics.csv) |
+| Forecast plots | [`results/forecast_plots`](results/forecast_plots) |
 | CI and smoke checks | [`.github/workflows/smoke.yml`](.github/workflows/smoke.yml) |
 | Portfolio positioning and caveats | [`docs/portfolio_summary.md`](docs/portfolio_summary.md) |
 
