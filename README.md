@@ -7,12 +7,6 @@
 
 Financial time-series forecasting portfolio project comparing RNN and LSTM sequence models on Google and Occidental Petroleum stock-price data. The project is framed as a sequence-modelling experiment, not as a trading recommendation system.
 
-## Quick Review Path
-
-- **2 minutes:** read this README for scope, evidence, and limitations.
-- **5 minutes:** inspect [`src/rnn_lstm_stock_forecasting`](src/rnn_lstm_stock_forecasting), [`tests`](tests), and the smoke workflow to see the reusable data, sequence, metric, and baseline checks.
-- **10 minutes:** open [`notebooks/rnn_lstm_stock_forecasting.ipynb`](notebooks/rnn_lstm_stock_forecasting.ipynb) for the original RNN/LSTM experiment and plots.
-
 ## Project Snapshot
 
 | Area | Summary |
