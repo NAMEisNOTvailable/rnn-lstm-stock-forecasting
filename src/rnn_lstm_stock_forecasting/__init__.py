@@ -1,4 +1,4 @@
-"""Reusable helpers for the RNN/LSTM stock forecasting portfolio project."""
+"""Reusable helpers for the RNN/LSTM stock forecasting project."""
 
 from .data import PRICE_COLUMNS, clean_price_frame, read_price_frame, scale_train_test, split_train_validation
 from .metrics import evaluate_forecast, mase, rmse, rmsle, smape
@@ -18,4 +18,3 @@ __all__ = [
     "smape",
     "split_train_validation",
 ]
-

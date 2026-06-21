@@ -1,6 +1,6 @@
 # Project Summary
 
-This repository presents a University of Adelaide Deep Learning coursework project as a machine-learning portfolio artifact with a clearer engineering structure. The core experiment compares SimpleRNN and LSTM models on Google and Occidental Petroleum stock-price series using 60-timestep windows.
+This repository presents a SimpleRNN/LSTM forecasting experiment with a clearer engineering structure. The core experiment compares sequence models on Google and Occidental Petroleum stock-price series using 60-timestep windows.
 
 ## Strengths
 
@@ -20,5 +20,5 @@ The persistence baseline in `results/baseline_metrics.csv` gives the neural-mode
 - Historical close/open/high/low/volume features support a limited sequence-modelling exercise; a broader forecasting study would need additional market and business context.
 - A short test window can make results look more stable than they are.
 - Repeated-run variance and seed sensitivity matter for RNN/LSTM training.
-- The project focuses on model workflow. Deployment topics such as transaction costs, slippage, portfolio risk, and live-market constraints are outside the coursework scope.
-- Forecasts should be read as academic model outputs from a coursework setting.
+- The project focuses on model workflow. Deployment topics such as transaction costs, slippage, investment risk, and live-market constraints are outside the experiment scope.
+- Forecasts should be read as academic model outputs, not trading guidance.

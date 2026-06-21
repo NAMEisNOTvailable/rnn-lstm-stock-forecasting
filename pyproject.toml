@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "rnn-lstm-stock-forecasting"
 version = "0.1.0"
-description = "Reusable helpers and validation checks for an RNN/LSTM financial time-series forecasting portfolio project."
+description = "Reusable helpers and validation checks for an RNN/LSTM financial time-series forecasting project."
 readme = "README.md"
 requires-python = ">=3.10,<3.12"
 license = { text = "MIT" }

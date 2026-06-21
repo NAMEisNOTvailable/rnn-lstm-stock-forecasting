@@ -5,7 +5,7 @@
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-RNN%20%7C%20LSTM-ff6f00)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-University of Adelaide Deep Learning coursework project comparing RNN and LSTM sequence models on Google and Occidental Petroleum stock-price data.
+RNN/LSTM sequence-modelling project comparing Google and Occidental Petroleum stock-price forecasting against a simple persistence baseline.
 
 ## Project Snapshot
 
@@ -18,7 +18,7 @@ University of Adelaide Deep Learning coursework project comparing RNN and LSTM s
 | Models in notebook | SimpleRNN and LSTM with dropout, MSE loss, Adam optimizer |
 | Evaluation metrics | RMSE, sMAPE, MASE, RMSLE |
 | Validation checks | Unit-tested preprocessing, sequence construction, metrics, and persistence baseline |
-| Main artefacts | [`notebooks`](notebooks), [`src/rnn_lstm_stock_forecasting`](src/rnn_lstm_stock_forecasting), [`results/comparison_metrics.csv`](results/comparison_metrics.csv), [`results/forecast_plots`](results/forecast_plots), [`docs/portfolio_summary.md`](docs/portfolio_summary.md) |
+| Main artefacts | [`notebooks`](notebooks), [`src/rnn_lstm_stock_forecasting`](src/rnn_lstm_stock_forecasting), [`results/comparison_metrics.csv`](results/comparison_metrics.csv), [`results/forecast_plots`](results/forecast_plots), [`docs/project_summary.md`](docs/project_summary.md) |
 
 ## What This Demonstrates
 
@@ -26,7 +26,7 @@ University of Adelaide Deep Learning coursework project comparing RNN and LSTM s
 - Added tested helper modules for data cleaning, scaling, rolling-window sequence generation, and forecast metrics.
 - Added a one-step persistence baseline so RNN/LSTM forecasts can be compared against a simple previous-day-close benchmark.
 - Reported RMSE, sMAPE, MASE, and RMSLE to show absolute, relative, scaled, and log-scale error.
-- Documented the limits of historical price-only forecasting and the coursework context for the experiment.
+- Documented the limits of historical price-only forecasting and short-window sequence modelling.
 
 ## Model Results
 
@@ -61,7 +61,7 @@ The committed baseline output is stored in [`results/baseline_metrics.csv`](resu
 
 ```text
 data/                         Stock-price CSV/XLSX files used by the notebook
-docs/                         Portfolio summary and modelling caveats
+docs/                         Project summary and modelling caveats
 notebooks/                    Original RNN/LSTM forecasting notebook
 results/                      Comparison metrics and exported notebook plots
 scripts/                      Command-line baseline runner
@@ -106,14 +106,14 @@ On Linux/macOS, replace `.\.venv\Scripts\python` with `. .venv/bin/activate` or 
 | Baseline benchmark | [`src/rnn_lstm_stock_forecasting/baselines.py`](src/rnn_lstm_stock_forecasting/baselines.py), [`results/comparison_metrics.csv`](results/comparison_metrics.csv) |
 | Forecast plots | [`results/forecast_plots`](results/forecast_plots) |
 | CI and smoke checks | [`.github/workflows/smoke.yml`](.github/workflows/smoke.yml) |
-| Portfolio positioning and caveats | [`docs/portfolio_summary.md`](docs/portfolio_summary.md) |
+| Project positioning and caveats | [`docs/project_summary.md`](docs/project_summary.md) |
 
 ## Limitations
 
 - The notebook uses historical price/volume features only; a broader forecasting study would add fundamentals, news, macro variables, market regime features, and transaction-cost assumptions.
 - The neural models are useful for sequence-modelling practice, but stock forecasting is highly sensitive to splits, seeds, market periods, and leakage controls.
 - The bundled stock data is third-party market data and remains under the original data-provider terms.
-- This project was completed as a University of Adelaide Deep Learning coursework project.
+- The project is an academic sequence-modelling exercise and should not be read as a trading system.
 
 ## License and Data
 
@@ -121,4 +121,4 @@ Original source code, notebook code, tests, and documentation are licensed under
 
 ## Status
 
-Academic portfolio project. The repository is organised around the original RNN/LSTM notebook, a fast baseline check, and CI coverage for the reusable preprocessing and metric logic.
+Academic forecasting project organised around the RNN/LSTM notebook, a fast baseline check, and CI coverage for the reusable preprocessing and metric logic.
